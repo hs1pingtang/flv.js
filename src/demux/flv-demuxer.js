@@ -236,8 +236,8 @@ class FLVDemuxer {
     // Force-override audio track present flag, boolean
     set overridedHasAudio(hasAudio) {
         this._hasAudioFlagOverrided = true;
-        this._hasAudio = hasAudio;
-        this._mediaInfo.hasAudio = hasAudio;
+        this._hasAudio = this._hasAudio ? hasAudio : false;
+        this._mediaInfo.hasAudio = this._hasAudio;
     }
 
     // Force-override video track present flag, boolean
